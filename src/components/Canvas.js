@@ -20,12 +20,12 @@ export class Canvas extends React.Component {
       this.props.createShape({});
     }
 
-    setInterval(this.generateMutations, 1000);
+    setInterval(this.generateMutations, 5000);
   }
 
   generateMutations() {
     let shapeIdx = Math.floor(Math.random() * config.populationSize);
-    let deg = Math.random() > 0.5 ? 45 : 0;
+    let deg = Math.random() > 0.5 ? 180 : 0;
     let direction = Math.random() > 0.5 ? -1 : 1;
     deg *= direction;
     let transform = 'rotate(' + deg + 'deg) scale(' + (0.5 + Math.random()) + ')';

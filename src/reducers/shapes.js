@@ -9,18 +9,18 @@ const createShape = (state, style) => {
   return newState;
 };
 
-const mutateShape = (state, idx, style) => {
-  let newState = state.slice(0);
-  newState[idx].style = style;
-  return newState;
-};
-
 // const mutateShape = (state, idx, style) => {
-//   return state.map((shape) => {
-//     shape.style = style;
-//     return shape;
-//   });
+//   let newState = state.slice(0);
+//   newState[idx].style = style;
+//   return newState;
 // };
+
+const mutateShape = (state, idx, style) => {
+  return state.map((shape) => {
+    shape.style = style;
+    return shape;
+  });
+};
 
 const shapeReducer = (state = shapes, action) => {
   switch (action.type) {
